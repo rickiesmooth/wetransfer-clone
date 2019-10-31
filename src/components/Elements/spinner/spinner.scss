@@ -2,10 +2,12 @@
   position: absolute;
   left: 0;
   right: 0;
+
   &--rotate {
     animation: spinner--rotate 2s linear infinite;
     transform-origin: 50% 50%;
   }
+
   &--foreground {
     border-radius: 10px;
     stroke-linecap: round;

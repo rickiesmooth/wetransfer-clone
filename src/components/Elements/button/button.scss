@@ -14,10 +14,12 @@
     background-color 0.2s cubic-bezier(0.77, 0, 0.175, 1),
     color 0.2s cubic-bezier(0.77, 0, 0.175, 1);
   width: 9.75em;
+
   &:disabled {
     opacity: 0.6;
     pointer-events: none;
   }
+
   &:focus,
   &:hover {
     border-color: $primary-dark;
@@ -27,6 +29,7 @@
 .button.outline {
   background-color: transparent;
   color: $primary;
+
   &:focus,
   &:hover {
     color: $primary-dark;
@@ -36,6 +39,7 @@
 .button.contained {
   background-color: $primary;
   color: #ffffff;
+
   &:focus,
   &:hover {
     background-color: $primary-dark;

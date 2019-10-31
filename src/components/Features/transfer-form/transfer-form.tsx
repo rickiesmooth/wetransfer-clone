@@ -17,7 +17,17 @@ export const TransferForm: React.FC<Props> = ({
   onFileUpload,
   file
 }) => (
-  <form className="transfer-form" onSubmit={onSubmit}>
+  <form
+    className="transfer-form"
+    onSubmit={() => {
+      const confirmed = window.confirm(
+        "This will really upload the file, is that ok?"
+      );
+      if (confirmed) {
+        onSubmit();
+      }
+    }}
+  >
     <div className="transfer-form--top">
       {!file ? (
         <UploadInput onFileUpload={onFileUpload} />

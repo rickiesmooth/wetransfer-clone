@@ -6,6 +6,7 @@
   flex: 1;
   flex-wrap: wrap;
   min-width: 100%;
+
   &--top {
     background: #f7f9fa;
     max-height: 120px;
@@ -43,6 +44,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
   &--meta {
     font-weight: 400;
     color: $light-gray;
