@@ -1,0 +1,63 @@
+@import "../../../App.scss";
+
+$progress-spinner-size: 170px;
+
+.progress {
+  &--spinner {
+    position: relative;
+    margin-top: 1.5em;
+    height: $progress-spinner-size;
+    width: $progress-spinner-size;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--meta {
+    width: 100%;
+    text-align: center;
+  }
+
+  &--meta h3 {
+    font-weight: 400;
+    margin-bottom: 0.2em;
+  }
+
+  &--meta p {
+    color: #484a4d;
+    font-weight: 400;
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    font-size: 0.8125em;
+    line-height: 1.6153846154em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+.progress--percentage {
+  color: $dark-grey;
+  font-feature-settings: "lnum";
+  font-size: 3.875em;
+  font-weight: 400;
+  font-variant-numeric: lining-nums;
+  line-height: 0.8;
+  white-space: nowrap;
+  margin: auto;
+
+  span {
+    font-size: 0.3em;
+    line-height: 1em;
+    vertical-align: top;
+    color: $light-gray;
+  }
+}
+
+@keyframes spinner--rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

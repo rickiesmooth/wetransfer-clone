@@ -1,0 +1,11 @@
+.done {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  & .input-field {
+    margin-top: auto;
+    border: 1px solid #eee;
+    text-overflow: ellipsis;
+  }
+}

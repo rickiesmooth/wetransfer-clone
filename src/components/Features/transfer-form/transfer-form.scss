@@ -1,0 +1,54 @@
+@import "../../../App.scss";
+
+.transfer-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-wrap: wrap;
+  min-width: 100%;
+  &--top {
+    background: #f7f9fa;
+    max-height: 120px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.upload-label {
+  display: flex;
+  cursor: pointer;
+
+  h2 {
+    display: block;
+    font-size: 1.375em;
+    padding-left: 0.5em;
+    font-weight: 400;
+    transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+}
+
+.uploaded-file {
+  &--title {
+    font-weight: 400;
+    color: $dark-grey;
+    font-size: 0.875em;
+    line-height: 1.4285714286em;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &--meta {
+    font-weight: 400;
+    color: $light-gray;
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.1666666667em;
+    margin: 0;
+  }
+}

@@ -1,0 +1,43 @@
+@import "../../../App.scss";
+
+.button {
+  border: 1px solid $primary;
+  border-radius: 1.25em;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 0.5em auto;
+  font-size: 1em;
+  height: 2.5em;
+  outline: 0;
+  font-weight: 500;
+  transition: border-color 0.2s cubic-bezier(0.77, 0, 0.175, 1),
+    background-color 0.2s cubic-bezier(0.77, 0, 0.175, 1),
+    color 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+  width: 9.75em;
+  &:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  &:focus,
+  &:hover {
+    border-color: $primary-dark;
+  }
+}
+
+.button.outline {
+  background-color: transparent;
+  color: $primary;
+  &:focus,
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+.button.contained {
+  background-color: $primary;
+  color: #ffffff;
+  &:focus,
+  &:hover {
+    background-color: $primary-dark;
+  }
+}
