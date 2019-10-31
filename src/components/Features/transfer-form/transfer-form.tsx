@@ -20,7 +20,7 @@ export const TransferForm: React.FC<Props> = ({
   <form className="transfer-form" onSubmit={onSubmit}>
     <div className="transfer-form--top">
       {!file ? (
-        <UploadLabel onFileUpload={onFileUpload} />
+        <UploadInput onFileUpload={onFileUpload} />
       ) : (
         <UploadedFile file={file} />
       )}
@@ -35,7 +35,7 @@ export const TransferForm: React.FC<Props> = ({
   </form>
 );
 
-const UploadLabel: React.FC<{ onFileUpload: Props["onFileUpload"] }> = ({
+const UploadInput: React.FC<{ onFileUpload: Props["onFileUpload"] }> = ({
   onFileUpload
 }) => (
   <label className="upload-label">

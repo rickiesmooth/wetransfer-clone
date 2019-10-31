@@ -4,14 +4,15 @@ import { TransferForm } from "../transfer-form/transfer-form";
 import { Progress } from "../progress/progress";
 import { Done } from "../done/done";
 
+import uuid from "uuid/v1";
 import AWS from "aws-sdk/global";
 import S3 from "aws-sdk/clients/s3";
 
 import "./transfer.scss";
 
-AWS.config.region = "eu-central-1";
+AWS.config.region = process.env.REACT_APP_AWS_REGION || "";
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-  IdentityPoolId: "eu-central-1:3174cb9e-4244-4185-8ec1-8416179d3ab9"
+  IdentityPoolId: process.env.REACT_APP_IDENTITY_POOL_ID || ""
 });
 
 enum Routes {
@@ -28,13 +29,12 @@ export const Transfer: React.FC = () => {
 
   // upload is the cached request object
   const upload = React.useMemo(() => {
-    const id = new Date().getTime() / 1000;
     const getUpload = () =>
       new S3().upload({
         Body: file,
-        Bucket: "you-transfer",
+        Bucket: process.env.REACT_APP_S3_BUCKET || "",
         ContentType: file!.type,
-        Key: `${file.name}-${id}.${file.type}}`
+        Key: uuid()
       });
     if (file && route === Routes.Progress) {
       return getUpload();
